@@ -21,6 +21,10 @@ const genres_controller_1 = require("./genres/genres.controller");
 const platforms_controller_1 = require("./platforms/platforms.controller");
 const platforms_service_1 = require("./platforms/platforms.service");
 const rawg_api_3 = require("./platforms/api/rawg.api");
+const developers_module_1 = require("./developers/developers.module");
+const developers_controller_1 = require("./developers/developers.controller");
+const developers_service_1 = require("./developers/developers.service");
+const rawg_api_4 = require("./developers/api/rawg.api");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -32,9 +36,26 @@ exports.AppModule = AppModule = __decorate([
                 load: [game_tracker_config_1.default],
                 isGlobal: true,
             }),
+            developers_module_1.DevelopersModule,
         ],
-        controllers: [app_controller_1.AppController, game_information_controller_1.GameInformationController, genres_controller_1.GenresController, platforms_controller_1.PlatformsController],
-        providers: [app_service_1.AppService, rawg_api_1.RawgGamesApi, rawg_api_2.RawgGenresApi, game_information_service_1.GameInformationService, genres_service_1.GenresService, platforms_service_1.PlatformsService, rawg_api_3.RawgPlatformsApi],
+        controllers: [
+            app_controller_1.AppController,
+            game_information_controller_1.GameInformationController,
+            genres_controller_1.GenresController,
+            platforms_controller_1.PlatformsController,
+            developers_controller_1.DevelopersController,
+        ],
+        providers: [
+            app_service_1.AppService,
+            rawg_api_1.RawgGamesApi,
+            rawg_api_2.RawgGenresApi,
+            game_information_service_1.GameInformationService,
+            genres_service_1.GenresService,
+            platforms_service_1.PlatformsService,
+            rawg_api_3.RawgPlatformsApi,
+            developers_service_1.DevelopersService,
+            rawg_api_4.RawgDevelopersApi,
+        ],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

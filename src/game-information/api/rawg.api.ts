@@ -1,10 +1,10 @@
-import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
-import { ListGamesDto } from '../dto/list-games/list-games.dto';
-import { ListGamesResponse } from '../data/list-games/list-games-response.data';
-import { ListTopGamesDto } from '../dto/list-top-games/list-top-games.dto';
-import { ListGamesByPlatformDto } from '../dto/list-games-by-platform/list-games-by-platform.dto';
-import { GetGameDetailsDto } from '../dto/get-game-details/get-game-details.dto';
-import { ListGamesByGenre } from '../dto/list-games-by-genre/list-games-by-genre.dto';
+import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
+import { ListGamesDto } from "../dto/list-games/list-games.dto";
+import { ListGamesResponse } from "../data/list-games/list-games-response.data";
+import { ListTopGamesDto } from "../dto/list-top-games/list-top-games.dto";
+import { ListGamesByPlatformDto } from "../dto/list-games-by-platform/list-games-by-platform.dto";
+import { GetGameDetailsDto } from "../dto/get-game-details/get-game-details.dto";
+import { ListGamesByGenre } from "../dto/list-games-by-genre/list-games-by-genre.dto";
 
 export class RawgGamesApi {
   private axiosInstance: AxiosInstance;
@@ -19,7 +19,7 @@ export class RawgGamesApi {
   async listGames(listGamesDto: ListGamesDto) {
     try {
       const { page, pageSize } = listGamesDto;
-      const response = await this.axiosInstance.get('/games', {
+      const response = await this.axiosInstance.get("/games", {
         params: {
           page,
           page_size: pageSize,
@@ -37,7 +37,7 @@ export class RawgGamesApi {
     console.log(listTopGamesDto);
     try {
       const { page, pageSize, metacritic } = listTopGamesDto;
-      const response = await this.axiosInstance.get('/games', {
+      const response = await this.axiosInstance.get("/games", {
         params: {
           page,
           page_size: pageSize,
@@ -56,7 +56,7 @@ export class RawgGamesApi {
     console.log(listGamesByPlatformDto);
     try {
       const { page, pageSize, platforms } = listGamesByPlatformDto;
-      const response = await this.axiosInstance.get('/games', {
+      const response = await this.axiosInstance.get("/games", {
         params: {
           page,
           page_size: pageSize,
@@ -71,12 +71,11 @@ export class RawgGamesApi {
     }
   }
 
-
   async listGamesByGenre(listGamesByGenre: ListGamesByGenre) {
     console.log(listGamesByGenre);
     try {
       const { page, pageSize, genres } = listGamesByGenre;
-      const response = await this.axiosInstance.get('/games', {
+      const response = await this.axiosInstance.get("/games", {
         params: {
           page,
           page_size: pageSize,

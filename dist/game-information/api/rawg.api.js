@@ -12,7 +12,7 @@ class RawgGamesApi {
     async listGames(listGamesDto) {
         try {
             const { page, pageSize } = listGamesDto;
-            const response = await this.axiosInstance.get('/games', {
+            const response = await this.axiosInstance.get("/games", {
                 params: {
                     page,
                     page_size: pageSize,
@@ -29,7 +29,7 @@ class RawgGamesApi {
         console.log(listTopGamesDto);
         try {
             const { page, pageSize, metacritic } = listTopGamesDto;
-            const response = await this.axiosInstance.get('/games', {
+            const response = await this.axiosInstance.get("/games", {
                 params: {
                     page,
                     page_size: pageSize,
@@ -47,7 +47,7 @@ class RawgGamesApi {
         console.log(listGamesByPlatformDto);
         try {
             const { page, pageSize, platforms } = listGamesByPlatformDto;
-            const response = await this.axiosInstance.get('/games', {
+            const response = await this.axiosInstance.get("/games", {
                 params: {
                     page,
                     page_size: pageSize,
@@ -65,7 +65,7 @@ class RawgGamesApi {
         console.log(listGamesByGenre);
         try {
             const { page, pageSize, genres } = listGamesByGenre;
-            const response = await this.axiosInstance.get('/games', {
+            const response = await this.axiosInstance.get("/games", {
                 params: {
                     page,
                     page_size: pageSize,
