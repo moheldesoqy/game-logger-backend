@@ -7,7 +7,6 @@ import { RawgGamesApi } from "./game-information/api/rawg.api";
 import { GameInformationService } from "./game-information/game-information.service";
 import { GameInformationController } from "./game-information/game-information.controller";
 import { GenresService } from "./genres/genres.service";
-import { RawgGenresApi } from "./genres/api/rawg.api";
 import { GenresController } from "./genres/genres.controller";
 import { PlatformsController } from "./platforms/platforms.controller";
 import { PlatformsService } from "./platforms/platforms.service";
@@ -16,6 +15,11 @@ import { DevelopersModule } from "./developers/developers.module";
 import { DevelopersController } from "./developers/developers.controller";
 import { DevelopersService } from "./developers/developers.service";
 import { RawgDevelopersApi } from "./developers/api/rawg.api";
+import { StoresModule } from './stores/stores.module';
+import { RawgGenresApi } from "./genres/api/rawg.api";
+import { StoresService } from "./stores/stores.service";
+import { StoresController } from "./stores/stores.controller";
+import { RawgStoresApi } from "./stores/api/rawg.api";
 
 @Module({
   imports: [
@@ -25,6 +29,7 @@ import { RawgDevelopersApi } from "./developers/api/rawg.api";
       isGlobal: true,
     }),
     DevelopersModule,
+    StoresModule,
   ],
   controllers: [
     AppController,
@@ -32,6 +37,7 @@ import { RawgDevelopersApi } from "./developers/api/rawg.api";
     GenresController,
     PlatformsController,
     DevelopersController,
+    StoresController
   ],
   providers: [
     AppService,
@@ -43,6 +49,8 @@ import { RawgDevelopersApi } from "./developers/api/rawg.api";
     RawgPlatformsApi,
     DevelopersService,
     RawgDevelopersApi,
+    StoresService,
+    RawgStoresApi
   ],
 })
 export class AppModule {}

@@ -1,6 +1,6 @@
 import { Controller, Get, Body, Param } from "@nestjs/common";
 import { DevelopersService } from "./developers.service";
-import { ListGameDevelopersDto } from "./dto/list-game-developers/list-game-developers";
+import { ListGameDevelopersDto } from "./dto/list-game-developers/list-game-developers.dto";
 
 @Controller("developers")
 export class DevelopersController {

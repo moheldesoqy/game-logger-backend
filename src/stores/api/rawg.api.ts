@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
-import { ListGameDevelopersDto } from "../dto/list-game-developers/list-game-developers.dto";
+import { ListStoresDto } from "../dto/list-stores/list-stores.dto";
 
-export class RawgDevelopersApi {
+export class RawgStoresApi {
   private axiosInstance: AxiosInstance;
 
   constructor() {
@@ -11,10 +11,10 @@ export class RawgDevelopersApi {
     this.axiosInstance = axios.create(configAxios);
   }
 
-  async listGameDevelopers(listGameDevelopers: ListGameDevelopersDto) {
+  async listStorefronts(listStores: ListStoresDto) {
     try {
-      const { page, pageSize } = listGameDevelopers;
-      const response = await this.axiosInstance.get("/developers", {
+      const { page, pageSize } = listStores;
+      const response = await this.axiosInstance.get("/stores", {
         params: {
           page,
           page_size: pageSize,
@@ -28,11 +28,11 @@ export class RawgDevelopersApi {
     }
   }
 
-  async getGameDeveloper(id: number) {
+  async getStorefrontDetails(id: number) {
+    console.log(id);
     try {
-      const response = await this.axiosInstance.get("/developers", {
+      const response = await this.axiosInstance.get(`/stores/${id}`, {
         params: {
-          id: id,
           key: process.env.RAWG_API_KEY,
         },
       });

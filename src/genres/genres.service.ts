@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { RawgGenresApi } from "./api/rawg.api";
 import { ListGenresDto } from "./dto/list-genres/list-genres.dto";
 import { mapGenres } from "src/mapping/genre-mapping/genre-mapping";
+import { RawgGenresApi } from "./api/rawg.api";
 
 @Injectable()
 export class GenresService {

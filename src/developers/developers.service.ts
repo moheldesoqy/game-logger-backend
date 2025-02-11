@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { RawgDevelopersApi } from "./api/rawg.api";
-import { ListGameDevelopersDto } from "./dto/list-game-developers/list-game-developers";
+import { ListGameDevelopersDto } from "./dto/list-game-developers/list-game-developers.dto";
 
 @Injectable()
 export class DevelopersService {

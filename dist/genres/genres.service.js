@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenresService = void 0;
 const common_1 = require("@nestjs/common");
-const rawg_api_1 = require("./api/rawg.api");
 const genre_mapping_1 = require("../mapping/genre-mapping/genre-mapping");
+const rawg_api_1 = require("./api/rawg.api");
 let GenresService = class GenresService {
     constructor(rawgGenresApi) {
         this.rawgGenresApi = rawgGenresApi;
