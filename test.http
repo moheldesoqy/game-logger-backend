@@ -1,0 +1,1 @@
+GET http://localhost:8000/game-information/games?page=1&pageSize=5 HTTP/1.1
